@@ -1,19 +1,28 @@
+"use client";
 
-'use client'
+import React, { useState } from "react";
+import { fetchZillowListing, getGptResponse, ZillowProperty } from "../pages/api/api";
 
-import React, { useState } from 'react';
-import { fetchZillowListing, getGptResponse, ZillowProperty } from '../lib/api';
 
 const RealEstateGPT: React.FC = () => {
-  const [address, setAddress] = useState<string>('');
-  const [cityStateZip, setCityStateZip] = useState<string>('');
+    const [useMockData, setUseMockData] = useState(false);
+  const [address, setAddress] = useState<string>("");
+  const [cityStateZip, setCityStateZip] = useState<string>("");
   const [properties, setProperties] = useState<ZillowProperty[]>([]);
-  const [gptInput, setGptInput] = useState<string>('');
-  const [gptResponse, setGptResponse] = useState<string>('');
+  const [gptInput, setGptInput] = useState<string>("");
+  const [gptResponse, setGptResponse] = useState<string>("");
 
   const handleZillowSearch = async () => {
-    const results = await fetchZillowListing(address, cityStateZip);
+    const results = await fetchZillowListing(
+      address,
+      cityStateZip,
+      useMockData
+    );
     setProperties(results);
+  };
+
+  const handleToggleMockData = () => {
+    setUseMockData(!useMockData);
   };
 
   const handleGptSubmit = async () => {
@@ -24,7 +33,16 @@ const RealEstateGPT: React.FC = () => {
   return (
     <div>
       <h1>Real Estate Listings and GPT Assistant</h1>
-      
+      <div>
+        <label>
+          <input
+            type="checkbox"
+            checked={useMockData}
+            onChange={handleToggleMockData}
+          />
+          Use Mock Data
+        </label>
+      </div>
       <div>
         <h2>Zillow Listings</h2>
         <input
