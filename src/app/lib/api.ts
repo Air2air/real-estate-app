@@ -6,9 +6,6 @@ export interface ZillowProperty {
   price: string;
 }
 
-interface GptResponse {
-  content: string;
-}
 
 // Zillow API configuration
 const zillowApi = axios.create({

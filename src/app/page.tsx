@@ -1,4 +1,4 @@
-import Image from "next/image";
+
 import RealEstateGPT from "./components/RealEstateGPT";
 
 export default function Home() {
