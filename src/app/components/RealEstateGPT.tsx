@@ -1,28 +1,35 @@
-"use client";
+
+'use client'
 
 import React, { useState } from "react";
-import { fetchZillowListing, getGptResponse, ZillowProperty } from "../pages/api/api";
+import { getProperties } from "../pages/api/zillowApi";
+import { getGptResponse } from "../pages/api/openaiApi";
+import { SearchResults } from "../types/types";
 
+interface Props {}
 
-const RealEstateGPT: React.FC = () => {
-    const [useMockData, setUseMockData] = useState(false);
-  const [address, setAddress] = useState<string>("");
-  const [cityStateZip, setCityStateZip] = useState<string>("");
-  const [properties, setProperties] = useState<ZillowProperty[]>([]);
-  const [gptInput, setGptInput] = useState<string>("");
-  const [gptResponse, setGptResponse] = useState<string>("");
+const RealEstateGPT: React.FC<Props> = () => {
+  const [searchCriteria, setSearchCriteria] = useState({
+    address: "",
+    city: "",
+    state: "",
+    zipcode: "",
+    useMockData: false,
+  });
+  const [properties, setProperties] = useState<SearchResults>({
+    response: { results: { result: [] } },
+  });
+  const [gptInput, setGptInput] = useState("");
+  const [gptResponse, setGptResponse] = useState("");
 
-  const handleZillowSearch = async () => {
-    const results = await fetchZillowListing(
-      address,
-      cityStateZip,
-      useMockData
-    );
-    setProperties(results);
+  const handleSearchCriteriaChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = event.target;
+    setSearchCriteria((prevCriteria) => ({ ...prevCriteria, [name]: value }));
   };
 
-  const handleToggleMockData = () => {
-    setUseMockData(!useMockData);
+  const handleSearch = async () => {
+    const results = await getProperties(searchCriteria.useMockData);
+    setProperties(results);
   };
 
   const handleGptSubmit = async () => {
@@ -30,54 +37,84 @@ const RealEstateGPT: React.FC = () => {
     setGptResponse(response);
   };
 
+  
+
   return (
     <div>
       <h1>Real Estate Listings and GPT Assistant</h1>
-      <div>
+      <form>
         <label>
+          Address:
+          <input
+            type="text"
+            name="address"
+            value={searchCriteria.address}
+            onChange={handleSearchCriteriaChange}
+          />
+        </label>
+        <label>
+          City:
+          <input
+            type="text"
+            name="city"
+            value={searchCriteria.city}
+            onChange={handleSearchCriteriaChange}
+          />
+        </label>
+        <label>
+          State:
+          <input
+            type="text"
+            name="state"
+            value={searchCriteria.state}
+            onChange={handleSearchCriteriaChange}
+          />
+        </label>
+        <label>
+          Zipcode:
+          <input
+            type="text"
+            name="zipcode"
+            value={searchCriteria.zipcode}
+            onChange={handleSearchCriteriaChange}
+          />
+        </label>
+        <label>
+          Use Mock Data:
           <input
             type="checkbox"
-            checked={useMockData}
-            onChange={handleToggleMockData}
+            name="useMockData"
+            checked={searchCriteria.useMockData}
+            onChange={handleSearchCriteriaChange}
           />
-          Use Mock Data
         </label>
-      </div>
-      <div>
-        <h2>Zillow Listings</h2>
-        <input
-          type="text"
-          value={address}
-          onChange={(e) => setAddress(e.target.value)}
-          placeholder="Enter address"
-        />
-        <input
-          type="text"
-          value={cityStateZip}
-          onChange={(e) => setCityStateZip(e.target.value)}
-          placeholder="Enter city, state, zip"
-        />
-        <button onClick={handleZillowSearch}>Search Listings</button>
-        <ul>
-          {properties.map((property, index) => (
-            <li key={index}>
-              {property.address}: ${property.price}
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      <div>
-        <h2>GPT Assistant</h2>
-        <input
-          type="text"
-          value={gptInput}
-          onChange={(e) => setGptInput(e.target.value)}
-          placeholder="Ask GPT something..."
-        />
-        <button onClick={handleGptSubmit}>Submit</button>
-        <p>{gptResponse}</p>
-      </div>
+        <button type="button" onClick={handleSearch}>
+          Search
+        </button>
+      </form>
+      <form>
+        <label>
+          GPT Input:
+          <input
+            type="text"
+            value={gptInput}
+            onChange={(event) => setGptInput(event.target.value)}
+          />
+        </label>
+        <button type="button" onClick={handleGptSubmit}>
+          Submit
+        </button>
+      </form>
+      <h2>Properties:</h2>
+      <ul>
+        {properties.response.results.result.map((property) => (
+          <li key={property.zpid}>
+            {property.address.street}, {property.address.city}, {property.address.state} {property.address.zipcode}
+          </li>
+        ))}
+      </ul>
+      <h2>GPT Response:</h2>
+      <p>{gptResponse}</p>
     </div>
   );
 };

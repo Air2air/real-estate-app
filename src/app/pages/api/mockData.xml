@@ -1,115 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
-<searchResults xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.zillow.com/static/xsd/SearchResults.xsd http://www.zillowstatic.com/vstatic/42ce723d0d7f7f8c/static/xsd/SearchResults.xsd" xmlns:SearchResults="http://www.zillow.com/static/xsd/SearchResults.xsd">
-    <response>
-        <results>
-            <result>
-                <zpid>12345678</zpid>
-                <links>
-                    <homedetails>http://www.zillow.com/homedetails/12345678_zpid/</homedetails>
-                    <graphsanddata>http://www.zillow.com/homedetails/12345678_zpid/#graphs-and-data</graphsanddata>
-                    <mapthishome>http://www.zillow.com/homedetails/12345678_zpid/#map-this-home</mapthishome>
-                    <comparables>http://www.zillow.com/homedetails/12345678_zpid/#comparables</comparables>
-                </links>
-                <address>
-                    <street>123 Main St</street>
-                    <city>Anytown</city>
-                    <state>CA</state>
-                    <zipcode>12345</zipcode>
-                </address>
-                <FIPScounty>06037</FIPScounty>
-                <useCode>SingleFamily</useCode>
-                <taxAssessmentYear>2022</taxAssessmentYear>
-                <taxAssessment>123456.0</taxAssessment>
-                <yearBuilt>1950</yearBuilt>
-                <lotSizeSqFt>5000</lotSizeSqFt>
-                <finishedSqFt>1500</finishedSqFt>
-                <bathrooms>2.0</bathrooms>
-                <bedrooms>3</bedrooms>
-                <totalRooms>5</totalRooms>
-                <lastSoldDate>2022-01-01</lastSoldDate>
-                <lastSoldPrice currency="USD">500000</lastSoldPrice>
-                <zestimate>
-                    <amount currency="USD">550000</amount>
-                    <last-updated>2023-02-15</last-updated>
-                    <oneWeekChange deprecated="true"></oneWeekChange>
-                </zestimate>
-                <zindexValue>538,500</zindexValue>
-                <overallType>Single Family Residential</overallType>
-                <overallTypeSource></overallTypeSource>
-                <parcelId>1234567890</parcelId>
-            </result>
-            <result>
-                <zpid>98765432</zpid>
-                <links>
-                    <homedetails>http://www.zillow.com/homedetails/98765432_zpid/</homedetails>
-                    <graphsanddata>http://www.zillow.com/homedetails/98765432_zpid/#graphs-and-data</graphsanddata>
-                    <mapthishome>http://www.zillow.com/homedetails/98765432_zpid/#map-this-home</mapthishome>
-                    <comparables>http://www.zillow.com/homedetails/98765432_zpid/#comparables</comparables>
-                </links>
-                <address>
-                    <street>456 Elm St</street>
-                    <city>Othertown</city>
-                    <state>NY</state>
-                    <zipcode>67890</zipcode>
-                </address>
-                <FIPScounty>36047</FIPScounty>
-                <useCode>Condo</useCode>
-                <taxAssessmentYear>2021</taxAssessmentYear>
-                <taxAssessment>98765.0</taxAssessment>
-                <yearBuilt>2000</yearBuilt>
-                <lotSizeSqFt>1000</lotSizeSqFt>
-                <finishedSqFt>2000</finishedSqFt>
-                <bathrooms>1.5</bathrooms>
-                <bedrooms>2</bedrooms>
-                <totalRooms>4</totalRooms>
-                <lastSoldDate>2021-06-01</lastSoldDate>
-                <lastSoldPrice currency="USD">300000</lastSoldPrice>
-                <zestimate>
-                    <amount currency="USD">350000</amount>
-                    <last-updated>2023-03-15</last-updated>
-                    <oneWeekChange deprecated="true"></oneWeekChange>
-                </zestimate>
-                <zindexValue>328,500</zindexValue>
-                <overallType>Condominium</overallType>
-                <overallTypeSource></overallTypeSource>
-                <parcelId>9876543210</parcelId>
-            </result>
-            <result>
-                <zpid>11111111</zpid>
-                <links>
-                    <homedetails>http://www.zillow.com/homedetails/11111111_zpid/</homedetails>
-                    <graphsanddata>http://www.zillow.com/homedetails/11111111_zpid/#graphs-and-data</graphsanddata>
-                    <mapthishome>http://www.zillow.com/homedetails/11111111_zpid/#map-this-home</mapthishome>
-                    <comparables>http://www.zillow.com/homedetails/11111111_zpid/#comparables</comparables>
-                </links>
-                <address>
-                    <street>789 Oak St</street>
-                    <city>Thistown</city>
-                    <state>TX</state>
-                    <zipcode>34567</zipcode>
-                </address>
-                <FIPScounty>48085</FIPScounty>
-                <useCode>Townhouse</useCode>
-                <taxAssessmentYear>2020</taxAssessmentYear>
-                <taxAssessment>111111.0</taxAssessment>
-                <yearBuilt>1990</yearBuilt>
-                <lotSizeSqFt>2000</lotSizeSqFt>
-                <finishedSqFt>2500</finishedSqFt>
-                <bathrooms>2.5</bathrooms>
-                <bedrooms>3</bedrooms>
-                <totalRooms>5</totalRooms>
-                <lastSoldDate>2020-01-01</lastSoldDate>
-                <lastSoldPrice currency="USD">400000</lastSoldPrice>
-                <zestimate>
-                    <amount currency="USD">450000</amount>
-                    <last-updated>2023-04-15</last-updated>
-                    <oneWeekChange deprecated="true"></oneWeekChange>
-                </zestimate>
-                <zindexValue>418,500</zindexValue>
-                <overallType>Townhouse</overallType>
-                <overallTypeSource></overallTypeSource>
-                <parcelId>1111111111</parcelId>
-            </result>
-        </results>
-    </response>
+<searchResults
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.zillow.com/static/xsd/SearchResults.xsd http://www.zillowstatic.com/vstatic/42ce723d0d7f7f8c/static/xsd/SearchResults.xsd"
+	xmlns:SearchResults="http://www.zillow.com/static/xsd/SearchResults.xsd">
+	<response>
+		<results>
+			<result>
+				<zpid>12345678</zpid>
+				<links>
+					<homedetails>http://www.zillow.com/homedetails/12345678_zpid/</homedetails>
+					<graphsanddata>http://www.zillow.com/homedetails/12345678_zpid/#graphs-and-data</graphsanddata>
+					<mapthishome>http://www.zillow.com/homedetails/12345678_zpid/#map-this-home</mapthishome>
+					<comparables>http://www.zillow.com/homedetails/12345678_zpid/#comparables</comparables>
+				</links>
+				<address>
+					<street>123 Main St</street>
+					<city>Anytown</city>
+					<state>CA</state>
+					<zipcode>12345</zipcode>
+				</address>
+				<FIPScounty>06037</FIPScounty>
+				<useCode>SingleFamily</useCode>
+				<taxAssessmentYear>2022</taxAssessmentYear>
+				<taxAssessment>123456.0</taxAssessment>
+				<yearBuilt>1950</yearBuilt>
+				<lotSizeSqFt>5000</lotSizeSqFt>
+				<finishedSqFt>1500</finishedSqFt>
+				<bathrooms>2.0</bathrooms>
+				<bedrooms>3</bedrooms>
+				<totalRooms>5</totalRooms>
+				<lastSoldDate>2022-01-01</lastSoldDate>
+				<lastSoldPrice currency="USD">500000</lastSoldPrice>
+				<zestimate>
+					<amount currency="USD">550000</amount>
+					<last-updated>2023-02-15</last-updated>
+					<oneWeekChange deprecated="true"></oneWeekChange>
+				</zestimate>
+				<zindexValue>538,500</zindexValue>
+				<overallType>Single Family Residential</overallType>
+				<overallTypeSource></overallTypeSource>
+				<parcelId>1234567890</parcelId>
+			</result>
+			<result>
+				<zpid>98765432</zpid>
+				<links>
+					<homedetails>http://www.zillow.com/homedetails/98765432_zpid/</homedetails>
+					<graphsanddata>http://www.zillow.com/homedetails/98765432_zpid/#graphs-and-data</graphsanddata>
+					<mapthishome>http://www.zillow.com/homedetails/98765432_zpid/#map-this-home</mapthishome>
+					<comparables>http://www.zillow.com/homedetails/98765432_zpid/#comparables</comparables>
+				</links>
+				<address>
+					<street>456 Elm St</street>
+					<city>Othertown</city>
+					<state>NY</state>
+					<zipcode>67890</zipcode>
+				</address>
+				<FIPScounty>36047</FIPScounty>
+				<useCode>Condo</useCode>
+				<taxAssessmentYear>2021</taxAssessmentYear>
+				<taxAssessment>98765.0</taxAssessment>
+				<yearBuilt>2000</yearBuilt>
+				<lotSizeSqFt>1000</lotSizeSqFt>
+				<finishedSqFt>2000</finishedSqFt>
+				<bathrooms>1.5</bathrooms>
+				<bedrooms>2</bedrooms>
+				<totalRooms>4</totalRooms>
+				<lastSoldDate>2021-06-01</lastSoldDate>
+				<lastSoldPrice currency="USD">300000</lastSoldPrice>
+				<zestimate>
+					<amount currency="USD">350000</amount>
+					<last-updated>2023-03-15</last-updated>
+					<oneWeekChange deprecated="true"></oneWeekChange>
+				</zestimate>
+				<zindexValue>328,500</zindexValue>
+				<overallType>Condominium</overallType>
+				<overallTypeSource></overallTypeSource>
+				<parcelId>9876543210</parcelId>
+			</result>
+			<result>
+				<zpid>11111111</zpid>
+				<links>
+					<homedetails>http://www.zillow.com/homedetails/11111111_zpid/</homedetails>
+					<graphsanddata>http://www.zillow.com/homedetails/11111111_zpid/#graphs-and-data</graphsanddata>
+					<mapthishome>http://www.zillow.com/homedetails/11111111_zpid/#map-this-home</mapthishome>
+					<comparables>http://www.zillow.com/homedetails/11111111_zpid/#comparables</comparables>
+				</links>
+				<address>
+					<street>789 Oak St</street>
+					<city>Thistown</city>
+					<state>TX</state>
+					<zipcode>34567</zipcode>
+				</address>
+				<FIPScounty>48085</FIPScounty>
+				<useCode>Townhouse</useCode>
+				<taxAssessmentYear>2020</taxAssessmentYear>
+				<taxAssessment>111111.0</taxAssessment>
+				<yearBuilt>1990</yearBuilt>
+				<lotSizeSqFt>2000</lotSizeSqFt>
+				<finishedSqFt>2500</finishedSqFt>
+				<bathrooms>2.5</bathrooms>
+				<bedrooms>3</bedrooms>
+				<totalRooms>5</totalRooms>
+				<lastSoldDate>2020-01-01</lastSoldDate>
+				<lastSoldPrice currency="USD">400000</lastSoldPrice>
+				<zestimate>
+					<amount currency="USD">450000</amount>
+					<last-updated>2023-04-15</last-updated>
+					<oneWeekChange deprecated="true"></oneWeekChange>
+				</zestimate>
+				<zindexValue>418,500</zindexValue>
+				<overallType>Townhouse</overallType>
+				<overallTypeSource></overallTypeSource>
+				<parcelId>1111111111</parcelId>
+			</result>
+		</results>
+	</response>
 </searchResults>
